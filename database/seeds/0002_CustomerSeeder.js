@@ -25,14 +25,14 @@ class CustomerSeeder {
       await customer.roles().attach([role.id])
     }))
 
-    const user = await User.cerate({
+    const user = await User.create({
       name: 'Jean',
       surname: 'Santos',
       email: 'jean.engenheirocomp@gmail.com',
       password: 'secret'
     })
 
-    const adminRole = await Role.findby('slug', 'admin')
+    const adminRole = await Role.findBy('slug', 'admin')
     await user.roles().attach([adminRole.id])
   }
 }
